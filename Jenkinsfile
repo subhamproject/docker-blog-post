@@ -70,13 +70,13 @@ pipeline
     }
 	failure {
       // notify users when the Pipeline fails
-      mail to: 'smandal@rythmos',
+      mail to: 'smandal@rythmos.com',
           subject: "Failed Pipeline: ${currentBuild.fullDisplayName}",
           body: "Something is wrong with ${env.BUILD_URL} Please Check the logs"
     }
 	unstable {
       // notify users when the Pipeline fails
-      mail to: 'smandal@rythmos',
+      mail to: 'smandal@rythmos.com',
           subject: "Unstable Pipeline: ${currentBuild.fullDisplayName}",
           body: "Build is not stable,Please check the logs ${env.BUILD_URL}"
     }
