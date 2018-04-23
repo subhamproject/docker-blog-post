@@ -9,9 +9,9 @@ pipeline
 	// Define Environemnt Variable 
     environment 
     {
-	VERSION = '${env.BUILD_NUMBER}'
+	VERSION = 'latest'
         PROJECT = 'aws-jenkins-integration'
-        IMAGE = 'aws-jenkins-integration:VERSION'
+        IMAGE = 'aws-jenkins-integration:latest'
         ECRURL = 'https://920995523917.dkr.ecr.us-east-1.amazonaws.com'
         CRED = 'ecr:us-east-1:demo_aws_cred'
     }
@@ -48,7 +48,7 @@ pipeline
                 //  docker.withRegistry('https://920995523917.dkr.ecr.us-east-1.amazonaws.com', 'ecr:us-east-1:demo_aws_cred')
 				  
                     {
-			    docker.image(${IMAGE}).push()
+			    docker.image(IMAGE}).push()
                     }
                 }
             }
