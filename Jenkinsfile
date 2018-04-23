@@ -9,7 +9,7 @@ pipeline
 	// Define Environemnt Variable 
     environment 
     {
-        VERSION = 'latest'
+        VERSION = '$BUILD_NUMBER'
         PROJECT = 'aws-jenkins-integration'
         IMAGE = 'aws-jenkins-integration:latest'
         ECRURL = 'https://920995523917.dkr.ecr.us-east-1.amazonaws.com'
