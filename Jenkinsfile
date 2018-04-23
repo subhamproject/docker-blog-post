@@ -1,3 +1,4 @@
+#!groovy
 pipeline
 {
     options
@@ -5,6 +6,7 @@ pipeline
         buildDiscarder(logRotator(numToKeepStr: '3'))
     }
     agent any
+	// Define Environemnt Variable 
     environment 
     {
         VERSION = 'latest'
@@ -15,6 +17,7 @@ pipeline
     }
     stages
     {
+	// Clone git repository
 	stage ('Clone repository') 
 	{
 	steps 
@@ -22,6 +25,7 @@ pipeline
 	git poll: true,url: 'https://github.com/subhamproject/docker-blog-post.git'
 	}
 	}
+	// Build Docker image
      stage('Build Docker Image')
         {
             steps
@@ -33,6 +37,7 @@ pipeline
                 }
             }
         }
+		// Push Docker images to AWS ECR Or Docker HUB as applicable
         stage('Push Image to ECR')
         {
             steps
