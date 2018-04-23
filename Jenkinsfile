@@ -33,7 +33,7 @@ pipeline
                 script
                 {
                     // Build the docker image using a Dockerfile
-                    docker.build('${IMAGE}')
+			docker.build('${IMAGE}')
                 }
             }
         }
@@ -48,7 +48,7 @@ pipeline
                 //  docker.withRegistry('https://920995523917.dkr.ecr.us-east-1.amazonaws.com', 'ecr:us-east-1:demo_aws_cred')
 				  
                     {
-			    docker.image(IMAGE}).push()
+			    docker.image(IMAGE).push()
                     }
                 }
             }
