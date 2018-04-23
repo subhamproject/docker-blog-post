@@ -11,7 +11,7 @@ pipeline
     {
         VERSION = '$BUILD_NUMBER'
         PROJECT = 'aws-jenkins-integration'
-        IMAGE = 'aws-jenkins-integration:latest'
+        IMAGE = 'aws-jenkins-integration:$VERSION'
         ECRURL = 'https://920995523917.dkr.ecr.us-east-1.amazonaws.com'
         CRED = 'ecr:us-east-1:demo_aws_cred'
     }
