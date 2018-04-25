@@ -10,7 +10,7 @@ pipeline
     {
 	VERSION = 'latest'
         PROJECT = 'rcx-test-vf'
-        IMAGE = 'arcx-test-vf:latest'
+        IMAGE = 'rcx-test-vf:latest'
         ECRURL = 'https://254847454774.dkr.ecr.ap-southeast-1.amazonaws.com/rcx-test-vf'
         CRED = 'ecr:ap-southeast-1:demo_aws_cred'
     }
