@@ -20,7 +20,7 @@ pipeline
 	stage ('Clear workspace')
 	{
 	steps{
-	wsCleanup()
+	deleteDir()
 	}
 	}
 	
