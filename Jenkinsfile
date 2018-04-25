@@ -5,6 +5,10 @@ pipeline
         buildDiscarder(logRotator(numToKeepStr: '3'))
     }
     agent any
+	 tools { 
+        maven 'Maven 3.3.9' 
+        jdk 'jdk8' 
+    }
 	// Define Environemnt Variable 
     environment 
     {
@@ -32,6 +36,20 @@ pipeline
 	git poll: true,url: 'https://github.com/subhamproject/docker-blog-post.git'
 	}
 	}
+	  
+	stage ('Initialize Mvn PATH') {
+            steps {
+                sh '''
+                    echo "PATH = ${PATH}"
+                    echo "M2_HOME = ${M2_HOME}"
+                ''' 
+            }
+        }
+	    stage('Mvn compile') {
+      steps {
+        sh 'mvn clean install'
+      }
+    }
 	// Build Docker image
      stage('Build Docker Image')
         {
