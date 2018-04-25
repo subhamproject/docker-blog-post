@@ -9,8 +9,8 @@ pipeline
     environment 
     {
 	VERSION = 'latest'
-        PROJECT = 'aws-jenkins-integration'
-        IMAGE = 'aws-jenkins-integration:latest'
+        PROJECT = 'rcx-test-vf'
+        IMAGE = 'arcx-test-vf:latest'
         ECRURL = 'https://254847454774.dkr.ecr.ap-southeast-1.amazonaws.com/rcx-test-vf'
         CRED = 'ecr:ap-southeast-1:demo_aws_cred'
     }
